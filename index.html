@@ -1,0 +1,2084 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="KINGZEE CONNECT connects customers, professionals, companies, drivers and businesses through one digital ecosystem.">
+  <title>KINGZEE CONNECT | Connect. Trade. Grow.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- The matching stylesheet will be supplied in Phase 2. -->
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="icon" href="data:,">
+</head>
+
+<body>
+  <div id="app" class="app-shell">
+
+    <!-- =====================================================
+         1. WELCOME SCREEN — FIRST SCREEN FOR EVERY VISITOR
+    ====================================================== -->
+    <section id="welcomePage" class="page welcome-page active-page"
+      aria-labelledby="welcomeTitle">
+
+      <header class="welcome-header">
+        <a href="#welcomePage" class="brand brand-link" aria-label="KINGZEE CONNECT home">
+          <span class="brand-mark">K</span>
+          <span class="brand-name">KINGZEE <b>CONNECT</b></span>
+        </a>
+      </header>
+
+      <main class="welcome-content">
+        <div class="welcome-badge">
+          <span class="online-dot"></span>
+          YOUR WORLD. ONE CONNECTION.
+        </div>
+
+        <div class="welcome-logo" aria-hidden="true">
+          <span>K</span>
+        </div>
+
+        <h1 id="welcomeTitle">Welcome to <span>KINGZEE CONNECT</span></h1>
+
+        <p class="welcome-description">
+          Connecting businesses, skills, services and people.
+          Find solutions, build relationships and grow together.
+        </p>
+
+        <div class="welcome-actions">
+          <button type="button" id="goCreateAccount" class="btn btn-primary btn-large">
+            Create account
+          </button>
+
+          <button type="button" id="goSignIn" class="btn btn-secondary btn-large">
+            Sign in
+          </button>
+
+          <button type="button" id="goOwnerLogin" class="btn btn-outline btn-large">
+            <span aria-hidden="true">♙</span> Owner password &amp; PIN
+          </button>
+        </div>
+
+        <div class="welcome-features">
+          <span>Find services</span>
+          <span>Connect with people</span>
+          <span>Grow your business</span>
+        </div>
+      </main>
+
+      <footer class="welcome-footer">
+        <p>© <span data-current-year>2026</span> KINGZEE CONNECT</p>
+        <p>Connect. Trade. Grow.</p>
+      </footer>
+    </section>
+
+
+    <!-- =====================================================
+         2. CREATE ACCOUNT
+    ====================================================== -->
+    <section id="createAccountPage" class="page auth-page" hidden
+      aria-labelledby="createAccountTitle">
+
+      <header class="page-header">
+        <button type="button" class="icon-btn" data-back="welcomePage"
+          aria-label="Back to welcome">←</button>
+        <a href="#welcomePage" class="brand brand-link">
+          <span class="brand-mark">K</span>
+          <span class="brand-name">KINGZEE <b>CONNECT</b></span>
+        </a>
+      </header>
+
+      <main class="auth-container">
+        <div class="auth-heading">
+          <span class="section-eyebrow">JOIN OUR COMMUNITY</span>
+          <h1 id="createAccountTitle">Create your account</h1>
+          <p>One account. Endless connections.</p>
+        </div>
+
+        <form id="createAccountForm" novalidate>
+          <label for="signupFullName">Full name</label>
+          <input id="signupFullName" name="fullName" type="text"
+            autocomplete="name" placeholder="Enter your full name"
+            maxlength="120" required>
+
+          <label for="signupEmail">Email address</label>
+          <input id="signupEmail" name="email" type="email"
+            autocomplete="email" placeholder="you@example.com" required>
+
+          <label for="signupPhone">Phone number</label>
+          <input id="signupPhone" name="phone" type="tel"
+            autocomplete="tel" placeholder="+233..." maxlength="25" required>
+
+          <label for="signupPassword">Password</label>
+          <div class="password-field">
+            <input id="signupPassword" name="password" type="password"
+              autocomplete="new-password" placeholder="Create a strong password"
+              minlength="8" required>
+            <button type="button" class="password-toggle"
+              data-toggle-password="signupPassword"
+              aria-label="Show password">Show</button>
+          </div>
+
+          <label for="signupConfirmPassword">Confirm password</label>
+          <div class="password-field">
+            <input id="signupConfirmPassword" name="confirmPassword"
+              type="password" autocomplete="new-password"
+              placeholder="Enter password again" minlength="8" required>
+            <button type="button" class="password-toggle"
+              data-toggle-password="signupConfirmPassword"
+              aria-label="Show confirm password">Show</button>
+          </div>
+
+          <label class="check-row" for="acceptTerms">
+            <input id="acceptTerms" name="acceptTerms" type="checkbox" required>
+            <span>
+              I agree to the
+              <button type="button" class="text-link" data-open-terms>
+                Terms and Conditions
+              </button>
+              and Privacy Policy.
+            </span>
+          </label>
+
+          <div id="signupError" class="form-message error-message"
+            role="alert" hidden></div>
+
+          <button type="submit" id="createAccountSubmit"
+            class="btn btn-primary btn-full">
+            Create account
+          </button>
+
+          <div class="auth-divider"><span>OR</span></div>
+
+          <button type="button" id="googleSignUp"
+            class="btn btn-google btn-full">
+            <span aria-hidden="true">G</span> Continue with Google
+          </button>
+
+          <p class="auth-switch">
+            Already have an account?
+            <button type="button" class="text-link" data-go="signInPage">
+              Sign in
+            </button>
+          </p>
+        </form>
+      </main>
+    </section>
+
+
+    <!-- =====================================================
+         3. SIGN IN
+    ====================================================== -->
+    <section id="signInPage" class="page auth-page" hidden
+      aria-labelledby="signInTitle">
+
+      <header class="page-header">
+        <button type="button" class="icon-btn" data-back="welcomePage"
+          aria-label="Back to welcome">←</button>
+        <a href="#welcomePage" class="brand brand-link">
+          <span class="brand-mark">K</span>
+          <span class="brand-name">KINGZEE <b>CONNECT</b></span>
+        </a>
+      </header>
+
+      <main class="auth-container">
+        <div class="auth-heading">
+          <span class="section-eyebrow">WELCOME BACK</span>
+          <h1 id="signInTitle">Sign in</h1>
+          <p>Continue where your connections left off.</p>
+        </div>
+
+        <form id="signInForm" novalidate>
+          <label for="loginEmail">Email address</label>
+          <input id="loginEmail" name="email" type="email"
+            autocomplete="username" placeholder="Enter your email" required>
+
+          <label for="loginPassword">Password</label>
+          <div class="password-field">
+            <input id="loginPassword" name="password" type="password"
+              autocomplete="current-password" placeholder="Enter your password"
+              required>
+            <button type="button" class="password-toggle"
+              data-toggle-password="loginPassword"
+              aria-label="Show password">Show</button>
+          </div>
+
+          <div class="form-row-between">
+            <span></span>
+            <button type="button" id="forgotPasswordBtn" class="text-link">
+              Forgot password?
+            </button>
+          </div>
+
+          <div id="signinError" class="form-message error-message"
+            role="alert" hidden></div>
+
+          <button type="submit" id="signInSubmit"
+            class="btn btn-primary btn-full">
+            Sign in
+          </button>
+
+          <div class="auth-divider"><span>OR</span></div>
+
+          <button type="button" id="googleSignIn"
+            class="btn btn-google btn-full">
+            <span aria-hidden="true">G</span> Continue with Google
+          </button>
+
+          <p class="auth-switch">
+            New to KINGZEE CONNECT?
+            <button type="button" class="text-link"
+              data-go="createAccountPage">Create account</button>
+          </p>
+        </form>
+      </main>
+    </section>
+
+
+    <!-- =====================================================
+         4. OWNER AUTHENTICATION
+    ====================================================== -->
+    <section id="ownerLoginPage" class="page auth-page" hidden
+      aria-labelledby="ownerLoginTitle">
+
+      <header class="page-header">
+        <button type="button" class="icon-btn" data-back="welcomePage"
+          aria-label="Back to welcome">←</button>
+        <span class="brand-name">KINGZEE <b>OWNER</b></span>
+      </header>
+
+      <main class="auth-container">
+        <div class="auth-heading">
+          <span class="section-eyebrow">RESTRICTED ACCESS</span>
+          <h1 id="ownerLoginTitle">Owner portal</h1>
+          <p>Sign in with your authorized owner credentials.</p>
+        </div>
+
+        <form id="ownerLoginForm" novalidate>
+          <label for="ownerEmail">Owner email</label>
+          <input id="ownerEmail" name="email" type="email"
+            autocomplete="username" required>
+
+          <label for="ownerPassword">Owner password</label>
+          <div class="password-field">
+            <input id="ownerPassword" name="password" type="password"
+              autocomplete="current-password" required>
+            <button type="button" class="password-toggle"
+              data-toggle-password="ownerPassword">Show</button>
+          </div>
+
+          <label for="ownerPin">Owner PIN</label>
+          <input id="ownerPin" name="pin" type="password"
+            inputmode="numeric" autocomplete="off"
+            maxlength="12" placeholder="Enter owner PIN" required>
+
+          <div id="ownerLoginError" class="form-message error-message"
+            role="alert" hidden></div>
+
+          <button type="submit" class="btn btn-primary btn-full">
+            Secure owner sign in
+          </button>
+        </form>
+
+        <p class="security-note">
+          Owner permissions must be verified by the secure backend.
+        </p>
+      </main>
+    </section>
+
+
+    <!-- =====================================================
+         5. MAIN APPLICATION
+    ====================================================== -->
+    <section id="dashboardPage" class="page dashboard-page" hidden>
+
+      <header class="app-header">
+        <a href="#dashboardPage" class="brand brand-link">
+          <span class="brand-mark">K</span>
+          <span class="brand-name">KINGZEE <b>CONNECT</b></span>
+        </a>
+
+        <div class="header-actions">
+          <button type="button" class="icon-btn" data-go="messagesPage"
+            aria-label="Messages">
+            <span aria-hidden="true">✉</span>
+            <span id="headerUnreadCount" class="notification-count" hidden>0</span>
+          </button>
+
+          <button type="button" class="avatar-btn" data-go="profilePage"
+            aria-label="My profile">
+            <span id="headerAvatar">K</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="dashboard-content">
+        <section class="dashboard-greeting">
+          <p class="section-eyebrow">YOUR DIGITAL WORLD</p>
+          <h1>Hello, <span id="dashboardUserName">Member</span> 👋</h1>
+          <p>What would you like to do today?</p>
+        </section>
+
+        <button type="button" class="dashboard-search"
+          data-go="searchPage">
+          <span aria-hidden="true">⌕</span>
+          <span>Search services, companies and people...</span>
+          <span aria-hidden="true">→</span>
+        </button>
+
+        <!-- Registrations and account activity -->
+        <section class="dashboard-section">
+          <h2>Services &amp; Applications</h2>
+
+          <div class="dashboard-grid">
+            <button type="button" class="dashboard-tile"
+              data-go="professionalRegistrationPage">
+              <span class="tile-icon">🛠️</span>
+              <span>Professional Registration</span>
+            </button>
+
+            <button type="button" class="dashboard-tile"
+              data-go="companyRegistrationPage">
+              <span class="tile-icon">🏢</span>
+              <span>Company Registration</span>
+            </button>
+
+            <button type="button" class="dashboard-tile"
+              data-go="searchPage">
+              <span class="tile-icon">🔍</span>
+              <span>Search</span>
+            </button>
+
+            <button type="button" class="dashboard-tile"
+              data-go="messagesPage">
+              <span class="tile-icon">💬</span>
+              <span>Message</span>
+            </button>
+
+            <button type="button" class="dashboard-tile"
+              data-go="myApplicationsPage">
+              <span class="tile-icon">📋</span>
+              <span>My Application</span>
+            </button>
+
+            <button type="button" class="dashboard-tile"
+              data-go="statusPage">
+              <span class="tile-icon">📊</span>
+              <span>Status</span>
+            </button>
+
+            <button type="button" class="dashboard-tile"
+              data-go="userFollowPage">
+              <span class="tile-icon">👥</span>
+              <span>User Follow</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- KINGZEE ECOSYSTEM -->
+        <section class="dashboard-section">
+          <h2>KINGZEE ECOSYSTEM</h2>
+
+          <div class="ecosystem-banner">
+            <span class="ecosystem-symbol">🌎</span>
+            <div>
+              <h3>One connected ecosystem</h3>
+              <p>More services are being prepared.</p>
+            </div>
+            <span class="status-badge status-pending">Pending</span>
+          </div>
+
+          <div class="dashboard-grid">
+            <button type="button" class="dashboard-tile"
+              data-go="ecosystemServicePage" data-service="esim">
+              <span class="tile-icon">📱</span>
+              <span>eSIM</span>
+            </button>
+
+            <button type="button" class="dashboard-tile"
+              data-go="ecosystemServicePage" data-service="international">
+              <span class="tile-icon">🌍</span>
+              <span>International Service</span>
+            </button>
+
+            <button type="button" class="dashboard-tile"
+              data-go="ecosystemServicePage" data-service="game">
+              <span class="tile-icon">🎮</span>
+              <span>KINGZEE GAME</span>
+            </button>
+
+            <button type="button" class="dashboard-tile"
+              data-go="ecosystemServicePage" data-service="loan">
+              <span class="tile-icon">💰</span>
+              <span>KINGZEE LOAN</span>
+            </button>
+
+            <button type="button" class="dashboard-tile"
+              data-go="ecosystemServicePage" data-service="service-pay">
+              <span class="tile-icon">💳</span>
+              <span>SERVICE PAY</span>
+            </button>
+
+            <button type="button" class="dashboard-tile"
+              data-go="ecosystemServicePage" data-service="data">
+              <span class="tile-icon">📶</span>
+              <span>BUY DATA</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- TRADE AND RIDE -->
+        <section class="dashboard-section">
+          <h2>Business &amp; Mobility</h2>
+
+          <div class="dashboard-grid dashboard-grid-two">
+            <button type="button" class="dashboard-tile feature-tile"
+              data-go="kingzeeTradePage">
+              <span class="tile-icon">🛍️</span>
+              <span>KINGZEE TRADE</span>
+              <small>Stores, goods &amp; global trade</small>
+            </button>
+
+            <button type="button" class="dashboard-tile feature-tile"
+              data-go="kingzeeRidePage">
+              <span class="tile-icon">🚗</span>
+              <span>KINGZEE RIDE</span>
+              <small>Book rides &amp; drive</small>
+            </button>
+          </div>
+        </section>
+
+        <!-- PROFILE AND SUPPORT -->
+        <section class="dashboard-section">
+          <h2>Account &amp; Support</h2>
+
+          <div class="menu-list">
+            <button type="button" class="menu-row" data-go="profilePage">
+              <span>👤</span><span>Profile &amp; Settle</span><span>→</span>
+            </button>
+            <button type="button" class="menu-row" data-go="menuPage">
+              <span>☰</span><span>Menu</span><span>→</span>
+            </button>
+            <button type="button" class="menu-row" data-go="supportPage">
+              <span>🛟</span><span>Support</span><span>→</span>
+            </button>
+            <button type="button" class="menu-row" id="dashboardSignOut">
+              <span>↪</span><span>Sign out</span><span>→</span>
+            </button>
+          </div>
+        </section>
+
+        <footer class="app-footer">
+          <p>Follow KINGZEE CONNECT</p>
+          <a href="https://whatsapp.com/channel/0029Vb8BhSoCcW4he39vMV2l"
+            target="_blank" rel="noopener noreferrer">WhatsApp Channel</a>
+          <a href="https://t.me/kingzeeconnect"
+            target="_blank" rel="noopener noreferrer">Telegram</a>
+          <p>© <span data-current-year>2026</span> KINGZEE CONNECT</p>
+        </footer>
+      </main>
+    </section>
+
+
+    <!-- =====================================================
+         6. PROFESSIONAL REGISTRATION
+    ====================================================== -->
+    <section id="professionalRegistrationPage" class="page inner-page" hidden>
+      <header class="page-header">
+        <button type="button" class="icon-btn" data-back="dashboardPage">←</button>
+        <h1>Professional Registration</h1>
+      </header>
+
+      <main class="page-content">
+        <div class="registration-banner">
+          <span class="tile-icon">🛠️</span>
+          <h2>Showcase your professional skills</h2>
+          <p>Register your service so customers can find and contact you.</p>
+          <strong class="price-label">Registration fee: GH₵200</strong>
+        </div>
+
+        <form id="professionalRegistrationForm" class="content-form" novalidate>
+          <input type="hidden" name="applicationId" id="professionalApplicationId">
+
+          <label for="professionalFullName">Full name</label>
+          <input id="professionalFullName" name="fullName" required maxlength="120">
+
+          <label for="professionalEmail">Email</label>
+          <input id="professionalEmail" name="email" type="email" required>
+
+          <label for="professionalAddress">Address</label>
+          <textarea id="professionalAddress" name="address" rows="2" required></textarea>
+
+          <label for="professionalService">Professional services</label>
+          <select id="professionalService" name="service" required>
+            <option value="">Choose your service</option>
+            <option>Plumber</option>
+            <option>Electrician</option>
+            <option>Carpenter</option>
+            <option>Mechanic</option>
+            <option>Painter</option>
+            <option>Welder</option>
+            <option>Tailor / Fashion Designer</option>
+            <option>Hairdresser / Barber</option>
+            <option>Cleaner</option>
+            <option>Graphic Designer</option>
+            <option>Web Developer</option>
+            <option>Photographer / Videographer</option>
+            <option>AC Technician</option>
+            <option>Refrigeration Technician</option>
+            <option>Teacher / Tutor</option>
+            <option>Other</option>
+          </select>
+
+          <label for="professionalOtherService">Other service (if applicable)</label>
+          <input id="professionalOtherService" name="otherService">
+
+          <label for="professionalLocation">Service location</label>
+          <input id="professionalLocation" name="location"
+            placeholder="City, town or region" required>
+
+          <label for="professionalWhatsApp">WhatsApp number</label>
+          <input id="professionalWhatsApp" name="whatsapp" type="tel" required>
+
+          <label for="professionalCallNumber">Call number</label>
+          <input id="professionalCallNumber" name="callNumber" type="tel" required>
+
+          <label for="professionalLogo">Professional logo or profile picture</label>
+          <input id="professionalLogo" name="logo" type="file"
+            accept="image/jpeg,image/png,image/webp" required>
+          <div id="professionalLogoPreview" class="upload-preview"
+            aria-live="polite"></div>
+
+          <label for="professionalVideo">Upload introduction or work video</label>
+          <input id="professionalVideo" name="video" type="file"
+            accept="video/mp4,video/webm,video/quicktime">
+          <div id="professionalVideoPreview" class="upload-preview"
+            aria-live="polite"></div>
+
+          <label for="professionalDescription">Describe your experience and services</label>
+          <textarea id="professionalDescription" name="description"
+            rows="4" maxlength="3000" required></textarea>
+
+          <button type="button" id="professionalPreviewBtn"
+            class="btn btn-secondary btn-full">Preview application</button>
+
+          <button type="submit" id="professionalSaveDraftBtn"
+            class="btn btn-outline btn-full">Save draft</button>
+
+          <div id="professionalFormMessage" class="form-message"
+            role="status" hidden></div>
+        </form>
+
+        <section id="professionalPreviewPanel" class="preview-panel" hidden>
+          <h2>Review your professional profile</h2>
+          <div id="professionalPreviewContent"></div>
+          <button type="button" id="professionalEditBtn"
+            class="btn btn-secondary btn-full">Edit details</button>
+          <button type="button" id="professionalContinuePaymentBtn"
+            class="btn btn-primary btn-full">Continue to payment</button>
+        </section>
+
+        <section id="professionalPaymentPanel" class="payment-panel" hidden>
+          <h2>Registration payment</h2>
+          <p>Pay GH₵200 using one of the payment methods below.</p>
+
+          <div class="payment-method">
+            <h3>GCB Bank</h3>
+            <p>Account number: <strong>1011102447763</strong></p>
+            <button type="button" class="btn btn-outline"
+              data-copy="1011102447763">Copy account number</button>
+          </div>
+
+          <div class="payment-method">
+            <h3>MTN Mobile Money</h3>
+            <p>Payment number: <strong>055 911 4251</strong></p>
+            <button type="button" class="btn btn-outline"
+              data-copy="0559114251">Copy MoMo number</button>
+          </div>
+
+          <form id="professionalPaymentForm" novalidate>
+            <input type="hidden" name="applicationId"
+              id="professionalPaymentApplicationId">
+
+            <label for="professionalPaymentMethod">Payment method</label>
+            <select id="professionalPaymentMethod" name="paymentMethod" required>
+              <option value="">Choose payment method</option>
+              <option value="gcb">GCB Bank</option>
+              <option value="mtn-momo">MTN Mobile Money</option>
+            </select>
+
+            <label for="professionalPaymentReference">Transaction reference</label>
+            <input id="professionalPaymentReference" name="reference"
+              maxlength="150" placeholder="Enter transaction reference">
+
+            <label for="professionalPaymentProof">Upload payment proof</label>
+            <input id="professionalPaymentProof" name="paymentProof"
+              type="file" accept="image/jpeg,image/png,image/webp,application/pdf"
+              required>
+            <div id="professionalPaymentProofPreview" class="upload-preview"></div>
+
+            <button type="submit" class="btn btn-primary btn-full">
+              Submit payment proof &amp; application
+            </button>
+          </form>
+        </section>
+      </main>
+    </section>
+
+
+    <!-- =====================================================
+         7. COMPANY REGISTRATION
+    ====================================================== -->
+    <section id="companyRegistrationPage" class="page inner-page" hidden>
+      <header class="page-header">
+        <button type="button" class="icon-btn" data-back="dashboardPage">←</button>
+        <h1>Company Registration</h1>
+      </header>
+
+      <main class="page-content">
+        <div class="registration-banner">
+          <span class="tile-icon">🏢</span>
+          <h2>Bring your business to KINGZEE CONNECT</h2>
+          <p>Build a professional company profile and reach more customers.</p>
+          <strong class="price-label">Registration fee: GH₵300</strong>
+        </div>
+
+        <form id="companyRegistrationForm" class="content-form" novalidate>
+          <input type="hidden" name="applicationId" id="companyApplicationId">
+
+          <label for="companyName">Company name</label>
+          <input id="companyName" name="companyName" maxlength="180" required>
+
+          <label for="companyContactName">Contact person's full name</label>
+          <input id="companyContactName" name="contactName" required>
+
+          <label for="companyEmail">Business email</label>
+          <input id="companyEmail" name="email" type="email" required>
+
+          <label for="companyPhone">Business phone</label>
+          <input id="companyPhone" name="phone" type="tel" required>
+
+          <label for="companyWhatsApp">WhatsApp number</label>
+          <input id="companyWhatsApp" name="whatsapp" type="tel" required>
+
+          <label for="companyCategory">Business category</label>
+          <select id="companyCategory" name="category" required>
+            <option value="">Choose a category</option>
+            <option>Construction &amp; Engineering</option>
+            <option>Technology &amp; Digital Services</option>
+            <option>Retail &amp; Wholesale</option>
+            <option>Transport &amp; Logistics</option>
+            <option>Education</option>
+            <option>Health &amp; Wellness</option>
+            <option>Food &amp; Hospitality</option>
+            <option>Manufacturing</option>
+            <option>Import &amp; Export</option>
+            <option>Professional Services</option>
+            <option>Other</option>
+          </select>
+
+          <label for="companyAddress">Business address</label>
+          <textarea id="companyAddress" name="address" rows="2" required></textarea>
+
+          <label for="companyLocation">Operating location</label>
+          <input id="companyLocation" name="location"
+            placeholder="City, town or region" required>
+
+          <label for="companyWebsite">Website (optional)</label>
+          <input id="companyWebsite" name="website" type="url"
+            placeholder="https://example.com">
+
+          <label for="companyLogo">Company logo</label>
+          <input id="companyLogo" name="logo" type="file"
+            accept="image/jpeg,image/png,image/webp" required>
+          <div id="companyLogoPreview" class="upload-preview"></div>
+
+          <label for="companyImages">Business images</label>
+          <input id="companyImages" name="images" type="file"
+            accept="image/jpeg,image/png,image/webp" multiple>
+          <div id="companyImagesPreview" class="upload-preview"></div>
+
+          <label for="companyVideo">Company introduction video</label>
+          <input id="companyVideo" name="video" type="file"
+            accept="video/mp4,video/webm,video/quicktime">
+          <div id="companyVideoPreview" class="upload-preview"></div>
+
+          <label for="companyDescription">About the company</label>
+          <textarea id="companyDescription" name="description"
+            rows="4" maxlength="5000" required></textarea>
+
+          <button type="button" id="companyPreviewBtn"
+            class="btn btn-secondary btn-full">Preview application</button>
+
+          <button type="button" id="companySaveDraftBtn"
+            class="btn btn-outline btn-full">Save draft</button>
+
+          <div id="companyFormMessage" class="form-message"
+            role="status" hidden></div>
+        </form>
+
+        <section id="companyPreviewPanel" class="preview-panel" hidden>
+          <h2>Company profile preview</h2>
+          <div id="companyPreviewContent"></div>
+          <button type="button" id="companyEditBtn"
+            class="btn btn-secondary btn-full">Edit details</button>
+          <button type="button" id="companyContinuePaymentBtn"
+            class="btn btn-primary btn-full">Continue to payment</button>
+        </section>
+
+        <section id="companyPaymentPanel" class="payment-panel" hidden>
+          <h2>Company registration payment</h2>
+          <p>Registration fee: <strong>GH₵300</strong></p>
+          <p>GCB Bank: <strong>1011102447763</strong></p>
+          <p>MTN MoMo: <strong>055 911 4251</strong></p>
+
+          <form id="companyPaymentForm" novalidate>
+            <input type="hidden" name="applicationId"
+              id="companyPaymentApplicationId">
+
+            <label for="companyPaymentMethod">Payment method</label>
+            <select id="companyPaymentMethod" name="paymentMethod" required>
+              <option value="">Choose payment method</option>
+              <option value="gcb">GCB Bank</option>
+              <option value="mtn-momo">MTN Mobile Money</option>
+            </select>
+
+            <label for="companyPaymentReference">Transaction reference</label>
+            <input id="companyPaymentReference" name="reference" maxlength="150">
+
+            <label for="companyPaymentProof">Payment proof</label>
+            <input id="companyPaymentProof" name="paymentProof" type="file"
+              accept="image/jpeg,image/png,image/webp,application/pdf" required>
+            <div id="companyPaymentProofPreview" class="upload-preview"></div>
+
+            <button type="submit" class="btn btn-primary btn-full">
+              Submit payment proof &amp; application
+            </button>
+          </form>
+        </section>
+      </main>
+    </section>
+
+
+    <!-- =====================================================
+         8. SEARCH ENGINE — APPROVED PROFILES ONLY
+    ====================================================== -->
+    <section id="searchPage" class="page inner-page" hidden>
+      <header class="page-header">
+        <button type="button" class="icon-btn" data-back="dashboardPage">←</button>
+        <h1>Discover Services</h1>
+      </header>
+
+      <main class="page-content">
+        <form id="searchForm" class="search-form">
+          <label class="visually-hidden" for="searchQuery">Search</label>
+          <input id="searchQuery" name="query" type="search"
+            placeholder="Find a plumber, company, store..." autocomplete="off">
+
+          <label for="searchType">Search category</label>
+          <select id="searchType" name="type">
+            <option value="all">All approved profiles</option>
+            <option value="professional">Professionals</option>
+            <option value="company">Companies</option>
+            <option value="store">Stores</option>
+          </select>
+
+          <label for="searchLocation">Location</label>
+          <input id="searchLocation" name="location"
+            placeholder="City, town or region">
+
+          <button type="submit" class="btn btn-primary btn-full">Search</button>
+        </form>
+
+        <div class="results-heading">
+          <h2>Available profiles</h2>
+          <span id="searchResultsCount">0 results</span>
+        </div>
+
+        <div id="searchResults" class="profile-grid" aria-live="polite">
+          <div class="empty-state">
+            <span>🔍</span>
+            <h3>Find the right connection</h3>
+            <p>Search for an approved professional, company or store.</p>
+          </div>
+        </div>
+
+        <div id="searchPagination" class="pagination"></div>
+      </main>
+    </section>
+
+
+    <!-- =====================================================
+         9. PUBLIC PROFILE DETAILS
+    ====================================================== -->
+    <section id="publicProfilePage" class="page inner-page" hidden>
+      <header class="page-header">
+        <button type="button" class="icon-btn" data-back="searchPage">←</button>
+        <h1>Profile details</h1>
+      </header>
+
+      <main class="page-content">
+        <article id="publicProfileContent" class="public-profile-card">
+          <div class="empty-state">
+            <p>Select an approved profile to view its details.</p>
+          </div>
+        </article>
+
+        <div class="profile-action-bar">
+          <button type="button" id="publicProfileFollowBtn"
+            class="btn btn-secondary">Follow</button>
+          <button type="button" id="publicProfileMessageBtn"
+            class="btn btn-primary">Message</button>
+          <button type="button" id="publicProfileBookBtn"
+            class="btn btn-outline">Book service</button>
+        </div>
+      </main>
+    </section>
+
+
+    <!-- =====================================================
+         10. MESSAGES — TEXT, IMAGE AND VIDEO
+    ====================================================== -->
+    <section id="messagesPage" class="page inner-page messages-page" hidden>
+      <header class="page-header">
+        <button type="button" class="icon-btn" data-back="dashboardPage">←</button>
+        <h1>Messages</h1>
+        <button type="button" id="refreshConversationsBtn"
+          class="icon-btn" aria-label="Refresh messages">↻</button>
+      </header>
+
+      <main class="messages-layout">
+        <aside class="conversation-sidebar">
+          <label for="conversationSearch">Find a conversation</label>
+          <input id="conversationSearch" type="search"
+            placeholder="Search conversations">
+
+          <div id="conversationList" class="conversation-list">
+            <div class="empty-state">
+              <span>💬</span>
+              <p>Your conversations will appear here.</p>
+            </div>
+          </div>
+        </aside>
+
+        <section id="chatPanel" class="chat-panel" aria-label="Chat conversation">
+          <header class="chat-header">
+            <button type="button" id="chatBackBtn" class="icon-btn"
+              aria-label="Back to conversations">←</button>
+            <div id="chatPartnerAvatar" class="avatar-placeholder">K</div>
+            <div class="chat-partner-info">
+              <h2 id="chatPartnerName">Select a conversation</h2>
+              <p id="chatPartnerStatus">KINGZEE CONNECT</p>
+            </div>
+          </header>
+
+          <div id="bookingBanner" class="booking-banner" hidden>
+            <span id="bookingBannerText">Service booking</span>
+            <button type="button" id="bookingDetailsBtn"
+              class="text-link">View details</button>
+          </div>
+
+          <div id="chatMessages" class="chat-messages" aria-live="polite">
+            <div class="empty-state">
+              <span>👋</span>
+              <p>Choose a conversation to start messaging.</p>
+            </div>
+          </div>
+
+          <div id="chatAttachmentPreview" class="attachment-preview" hidden></div>
+
+          <form id="messageForm" class="message-composer">
+            <input type="hidden" id="activeConversationId"
+              name="conversationId">
+
+            <label class="attachment-button" for="messageAttachment"
+              aria-label="Attach image or video">＋</label>
+            <input id="messageAttachment" name="attachment" type="file"
+              accept="image/*,video/mp4,video/webm,video/quicktime" hidden>
+
+            <label class="visually-hidden" for="messageText">Message</label>
+            <textarea id="messageText" name="message" rows="1"
+              maxlength="5000" placeholder="Write a message..."
+              autocomplete="off"></textarea>
+
+            <button type="submit" id="sendMessageBtn"
+              class="btn btn-primary" aria-label="Send message">➤</button>
+          </form>
+        </section>
+      </main>
+    </section>
+
+
+    <!-- =====================================================
+         11. STATUS — ROUND PROFILE STORIES
+    ====================================================== -->
+    <section id="statusPage" class="page inner-page" hidden>
+      <header class="page-header">
+        <button type="button" class="icon-btn" data-back="dashboardPage">←</button>
+        <h1>Status</h1>
+        <button type="button" id="refreshStatusBtn" class="icon-btn"
+          aria-label="Refresh status">↻</button>
+      </header>
+
+      <main class="page-content">
+        <section class="status-create-card">
+          <h2>Share a status</h2>
+          <p>Share a moment, photo, video or caption with your community.</p>
+
+          <form id="statusForm" novalidate>
+            <label for="statusCaption">Caption</label>
+            <textarea id="statusCaption" name="caption" rows="3"
+              maxlength="1000" placeholder="What's happening?"></textarea>
+
+            <label for="statusMedia">Photo or video (optional)</label>
+            <input id="statusMedia" name="media" type="file"
+              accept="image/*,video/mp4,video/webm,video/quicktime">
+
+            <div id="statusMediaPreview" class="upload-preview"></div>
+
+            <label for="statusAudience">Who can view your status?</label>
+            <select id="statusAudience" name="audience">
+              <option value="everyone">Everyone on KINGZEE CONNECT</option>
+              <option value="followers">My followers</option>
+            </select>
+
+            <button type="submit" class="btn btn-primary btn-full">
+              Publish status
+            </button>
+          </form>
+        </section>
+
+        <section class="dashboard-section">
+          <h2>Recent status</h2>
+          <div id="statusStories" class="status-stories">
+            <div class="empty-state">
+              <span>◉</span>
+              <p>Status updates will appear here.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </section>
+
+
+    <!-- STATUS VIEWER -->
+    <section id="statusViewerPage" class="page status-viewer-page" hidden>
+      <header class="status-viewer-header">
+        <button type="button" id="closeStatusViewer"
+          class="icon-btn" aria-label="Close status">×</button>
+        <div id="statusProgress" class="status-progress"></div>
+      </header>
+
+      <main id="statusViewerContent" class="status-viewer-content">
+        <div id="statusViewerAuthor" class="status-author"></div>
+        <div id="statusViewerMedia" class="status-viewer-media"></div>
+        <p id="statusViewerCaption"></p>
+      </main>
+
+      <footer class="status-viewer-footer">
+        <button type="button" id="statusPreviousBtn"
+          class="btn btn-outline">Previous</button>
+        <button type="button" id="statusReplyBtn"
+          class="btn btn-primary">Reply</button>
+        <button type="button" id="statusNextBtn"
+          class="btn btn-outline">Next</button>
+      </footer>
+    </section>
+
+
+    <!-- =====================================================
+         12. DISCOVER — TRIANGULAR PROFILE STORIES
+    ====================================================== -->
+    <section id="discoverPage" class="page inner-page" hidden>
+      <header class="page-header">
+        <button type="button" class="icon-btn" data-back="dashboardPage">←</button>
+        <h1>Discover</h1>
+      </header>
+
+      <main class="page-content">
+        <section class="discover-create-card">
+          <h2>Share with your followers</h2>
+          <form id="discoverForm" novalidate>
+            <label for="discoverCaption">Caption</label>
+            <textarea id="discoverCaption" name="caption" rows="3"
+              maxlength="2000" placeholder="Share an idea, skill or moment..."></textarea>
+
+            <label for="discoverMedia">Photo or video</label>
+            <input id="discoverMedia" name="media" type="file"
+              accept="image/*,video/mp4,video/webm,video/quicktime">
+            <div id="discoverMediaPreview" class="upload-preview"></div>
+
+            <button type="submit" class="btn btn-primary btn-full">
+              Publish discover post
+            </button>
+          </form>
+        </section>
+
+        <section class="dashboard-section">
+          <h2>Posts from people you follow</h2>
+          <div id="discoverFeed" class="discover-feed">
+            <div class="empty-state">
+              <span>△</span>
+              <p>Discover posts from people you follow will appear here.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </section>
+
+
+    <!-- =====================================================
+         13. USER FOLLOW
+    ====================================================== -->
+    <section id="userFollowPage" class="page inner-page" hidden>
+      <header class="page-header">
+        <button type="button" class="icon-btn" data-back="dashboardPage">←</button>
+        <h1>Connections</h1>
+      </header>
+
+      <main class="page-content">
+        <div class="connection-tabs" role="tablist">
+          <button type="button" role="tab" aria-selected="true"
+            data-follow-tab="following" class="connection-tab active-tab">
+            Following <span id="followingCount">0</span>
+          </button>
+          <button type="button" role="tab" aria-selected="false"
+            data-follow-tab="followers" class="connection-tab">
+            Followers <span id="followersCount">0</span>
+          </button>
+          <button type="button" role="tab" aria-selected="false"
+            data-follow-tab="suggested" class="connection-tab">
+            Discover people
+          </button>
+        </div>
+
+        <div id="followPeopleList" class="profile-grid">
+          <div class="empty-state">
+            <span>👥</span>
+            <p>Your KINGZEE CONNECT community will appear here.</p>
+          </div>
+        </div>
+      </main>
+    </section>
+
+
+    <!-- =====================================================
+         14. MY APPLICATIONS
+    ====================================================== -->
+    <section id="myApplicationsPage" class="page inner-page" hidden>
+      <header class="page-header">
+        <button type="button" class="icon-btn" data-back="dashboardPage">←</button>
+        <h1>My Applications</h1>
+        <button type="button" id="refreshApplicationsBtn"
+          class="icon-btn" aria-label="Refresh applications">↻</button>
+      </header>
+
+      <main class="page-content">
+        <div class="application-filters">
+          <button type="button" class="filter-chip active-filter"
+            data-application-filter="all">All</button>
+          <button type="button" class="filter-chip"
+            data-application-filter="pending">Pending</button>
+          <button type="button" class="filter-chip"
+            data-application-filter="approved">Approved</button>
+          <button type="button" class="filter-chip"
+            data-application-filter="rejected">Rejected</button>
+        </div>
+
+        <div id="myApplicationsList" class="application-list">
+          <div class="empty-state">
+            <span>📋</span>
+            <p>Your submitted applications will appear here.</p>
+          </div>
+        </div>
+      </main>
+    </section>
+
+
+    <!-- =====================================================
+         15. APPLICATION DETAILS
+    ====================================================== -->
+    <section id="applicationDetailsPage" class="page inner-page" hidden>
+      <header class="page-header">
+        <button type="button" class="icon-btn" data-back="myApplicationsPage">←</button>
+        <h1>Application details</h1>
+      </header>
+
+      <main class="page-content">
+        <article id="applicationDetailsContent"></article>
+
+        <div id="applicationDetailsActions" class="action-stack">
+          <button type="button" id="editApprovedApplicationBtn"
+            class="btn btn-primary btn-full" hidden>Edit profile</button>
+          <button type="button" id="resubmitApplicationBtn"
+            class="btn btn-secondary btn-full" hidden>Resubmit application</button>
+        </div>
+      </main>
+    </section>
+
+
+    <!-- =====================================================
+         16. KINGZEE TRADE
+    ====================================================== -->
+    <section id="kingzeeTradePage" class="page inner-page" hidden>
+      <header class="page-header">
+        <button type="button" class="icon-btn" data-back="dashboardPage">←</button>
+        <h1>KINGZEE TRADE</h1>
+      </header>
+
+      <main class="page-content">
+        <div class="trade-hero">
+          <span class="tile-icon">🛍️</span>
+          <h2>Trade without borders</h2>
+          <p>Discover stores, buy goods and connect with suppliers.</p>
+        </div>
+
+        <div class="trade-tabs" role="tablist">
+          <button type="button" class="trade-tab active-tab"
+            data-trade-tab="stores" aria-selected="true">Stores</button>
+          <button type="button" class="trade-tab"
+            data-trade-tab="import-export" aria-selected="false">Import &amp; Export</button>
+          <button type="button" class="trade-tab"
+            data-trade-tab="my-store" aria-selected="false">My Store</button>
+        </div>
+
+        <!-- STORE MARKETPLACE -->
+        <section id="tradeStoresPanel" class="trade-panel">
+          <div class="section-heading-row">
+            <h2>Explore stores</h2>
+            <button type="button" class="text-link"
+              data-go="storeRegistrationPage">Register a store</button>
+          </div>
+
+          <form id="storeSearchForm" class="search-form">
+            <label for="storeSearchQuery">Find a product or store</label>
+            <input id="storeSearchQuery" name="query"
+              placeholder="Search products and shops">
+
+            <label for="storeCategory">Category</label>
+            <select id="storeCategory" name="category">
+              <option value="">All categories</option>
+              <option>Electronics</option>
+              <option>Clothing &amp; Fashion</option>
+              <option>Home &amp; Furniture</option>
+              <option>Building Materials</option>
+              <option>Food &amp; Agriculture</option>
+              <option>Beauty &amp; Personal Care</option>
+              <option>Automotive</option>
+              <option>Other</option>
+            </select>
+
+            <button type="submit" class="btn btn-primary btn-full">Search stores</button>
+          </form>
+
+          <div id="tradeStoreResults" class="profile-grid">
+            <div class="empty-state">
+              <span>🏪</span>
+              <p>Approved stores will appear here.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- IMPORT AND EXPORT -->
+        <section id="tradeImportExportPanel" class="trade-panel" hidden>
+          <h2>Import &amp; Export</h2>
+          <p>Connect with customers, suppliers, distributors and freight partners.</p>
+
+          <div class="dashboard-grid dashboard-grid-two">
+            <button type="button" class="dashboard-tile"
+              data-go="tradeListingFormPage" data-trade-type="import">
+              <span class="tile-icon">📦</span>
+              <span>Find or import goods</span>
+            </button>
+            <button type="button" class="dashboard-tile"
+              data-go="tradeListingFormPage" data-trade-type="export">
+              <span class="tile-icon">🚢</span>
+              <span>Sell or export goods</span>
+            </button>
+            <button type="button" class="dashboard-tile"
+              data-go="tradeListingFormPage" data-trade-type="distribution">
+              <span class="tile-icon">🚚</span>
+              <span>Distributor opportunities</span>
+            </button>
+            <button type="button" class="dashboard-tile"
+              data-go="tradeListingFormPage" data-trade-type="shipping">
+              <span class="tile-icon">🌐</span>
+              <span>Shipping and logistics</span>
+            </button>
+          </div>
+
+          <div id="tradeImportExportListings" class="profile-grid"></div>
+        </section>
+
+        <!-- MY STORE -->
+        <section id="tradeMyStorePanel" class="trade-panel" hidden>
+          <h2>Your store</h2>
+          <div id="myStoreSummary" class="application-list">
+            <p>Register your store to start selling on KINGZEE TRADE.</p>
+          </div>
+
+          <button type="button" class="btn btn-primary btn-full"
+            data-go="storeRegistrationPage">Register a store — GH₵100</button>
+        </section>
+      </main>
+    </section>
+
+
+    <!-- =====================================================
+         17. STORE REGISTRATION — GH₵100
+    ====================================================== -->
+    <section id="storeRegistrationPage" class="page inner-page" hidden>
+      <header class="page-header">
+        <button type="button" class="icon-btn" data-back="kingzeeTradePage">←</button>
+        <h1>Store Registration</h1>
+      </header>
+
+      <main class="page-content">
+        <div class="registration-banner">
+          <h2>Open your KINGZEE store</h2>
+          <p>Get your store reviewed before it becomes publicly visible.</p>
+          <strong class="price-label">Registration fee: GH₵100</strong>
+        </div>
+
+        <form id="storeRegistrationForm" class="content-form" novalidate>
+          <input type="hidden" name="applicationId" id="storeApplicationId">
+
+          <label for="storeName">Store name</label>
+          <input id="storeName" name="storeName" maxlength="180" required>
+
+          <label for="storeOwnerName">Owner or contact name</label>
+          <input id="storeOwnerName" name="ownerName" required>
+
+          <label for="storeEmail">Email</label>
+          <input id="storeEmail" name="email" type="email" required>
+
+          <label for="storePhone">Contact number</label>
+          <input id="storePhone" name="phone" type="tel" required>
+
+          <label for="storeWhatsApp">WhatsApp number</label>
+          <input id="storeWhatsApp" name="whatsapp" type="tel" required>
+
+          <label for="storeCategoryRegistration">Store category</label>
+          <select id="storeCategoryRegistration" name="category" required>
+            <option value="">Choose a category</option>
+            <option>Electronics</option>
+            <option>Clothing &amp; Fashion</option>
+            <option>Home &amp; Furniture</option>
+            <option>Building Materials</option>
+            <option>Food &amp; Agriculture</option>
+            <option>Beauty &amp; Personal Care</option>
+            <option>Automotive</option>
+            <option>Other</option>
+          </select>
+
+          <label for="storeLocation">Store location</label>
+          <input id="storeLocation" name="location" required>
+
+          <label for="storeAddress">Address</label>
+          <textarea id="storeAddress" name="address" rows="2" required></textarea>
+
+          <label for="storeLogo">Store logo or photo</label>
+          <input id="storeLogo" name="logo" type="file"
+            accept="image/jpeg,image/png,image/webp" required>
+          <div id="storeLogoPreview" class="upload-preview"></div>
+
+          <label for="storeDescription">Store description</label>
+          <textarea id="storeDescription" name="description"
+            rows="3" maxlength="3000" required></textarea>
+
+          <button type="button" id="storePreviewBtn"
+            class="btn btn-secondary btn-full">Preview store</button>
+
+          <button type="submit" id="storeSaveDraftBtn"
+            class="btn btn-outline btn-full">Save draft</button>
+
+          <div id="storeFormMessage" class="form-message" role="status" hidden></div>
+        </form>
+
+        <section id="storePreviewPanel" class="preview-panel" hidden>
+          <h2>Store preview</h2>
+          <div id="storePreviewContent"></div>
+          <button type="button" id="storeEditBtn"
+            class="btn btn-secondary btn-full">Edit store details</button>
+          <button type="button" id="storeContinuePaymentBtn"
+            class="btn btn-primary btn-full">Continue to payment</button>
+        </section>
+
+        <section id="storePaymentPanel" class="payment-panel" hidden>
+          <h2>Store registration payment</h2>
+          <p>Registration fee: <strong>GH₵100</strong></p>
+          <p>GCB Bank: <strong>1011102447763</strong></p>
+          <p>MTN MoMo: <strong>055 911 4251</strong></p>
+
+          <form id="storePaymentForm" novalidate>
+            <input type="hidden" name="applicationId" id="storePaymentApplicationId">
+
+            <label for="storePaymentMethod">Payment method</label>
+            <select id="storePaymentMethod" name="paymentMethod" required>
+              <option value="">Choose payment method</option>
+              <option value="gcb">GCB Bank</option>
+              <option value="mtn-momo">MTN Mobile Money</option>
+            </select>
+
+            <label for="storePaymentReference">Transaction reference</label>
+            <input id="storePaymentReference" name="reference" maxlength="150">
+
+            <label for="storePaymentProof">Upload payment proof</label>
+            <input id="storePaymentProof" name="paymentProof" type="file"
+              accept="image/jpeg,image/png,image/webp,application/pdf" required>
+            <div id="storePaymentProofPreview" class="upload-preview"></div>
+
+            <button type="submit" class="btn btn-primary btn-full">
+              Submit store application
+            </button>
+          </form>
+        </section>
+      </main>
+    </section>
+
+
+    <!-- =====================================================
+         18. TRADE LISTING — IMPORT / EXPORT
+    ====================================================== -->
+    <section id="tradeListingFormPage" class="page inner-page" hidden>
+      <header class="page-header">
+        <button type="button" class="icon-btn" data-back="kingzeeTradePage">←</button>
+        <h1>Trade listing</h1>
+      </header>
+
+      <main class="page-content">
+        <form id="tradeListingForm" class="content-form" novalidate>
+          <label for="tradeListingType">Listing type</label>
+          <select id="tradeListingType" name="listingType" required>
+            <option value="">Choose type</option>
+            <option value="import">Import request</option>
+            <option value="export">Export offer</option>
+            <option value="distribution">Distribution opportunity</option>
+            <option value="shipping">Shipping / logistics service</option>
+          </select>
+
+          <label for="tradeListingTitle">Goods or service title</label>
+          <input id="tradeListingTitle" name="title" maxlength="180" required>
+
+          <label for="tradeListingCategory">Category</label>
+          <input id="tradeListingCategory" name="category" required>
+
+          <label for="tradeListingDescription">Description</label>
+          <textarea id="tradeListingDescription" name="description"
+            rows="4" maxlength="5000" required></textarea>
+
+          <label for="tradeListingQuantity">Quantity</label>
+          <input id="tradeListingQuantity" name="quantity"
+            placeholder="e.g. 500 units">
+
+          <label for="tradeListingPrice">Price (GH₵)</label>
+          <input id="tradeListingPrice" name="price" type="number"
+            min="0" step="0.01">
+
+          <label for="tradeListingOrigin">Origin / collection location</label>
+          <input id="tradeListingOrigin" name="origin" required>
+
+          <label for="tradeListingDestination">Destination</label>
+          <input id="tradeListingDestination" name="destination">
+
+          <label for="tradeListingContact">Contact number</label>
+          <input id="tradeListingContact" name="contact" type="tel" required>
+
+          <label for="tradeListingImages">Product images</label>
+          <input id="tradeListingImages" name="images" type="file"
+            accept="image/jpeg,image/png,image/webp" multiple>
+          <div id="tradeListingImagesPreview" class="upload-preview"></div>
+
+          <button type="submit" class="btn btn-primary btn-full">
+            Submit trade listing
+          </button>
+          <div id="tradeListingMessage" class="form-message"
+            role="status" hidden></div>
+        </form>
+
+        <p class="security-note">
+          Listings and their visibility must follow the platform's moderation rules.
+        </p>
+      </main>
+    </section>
+
+
+    <!-- =====================================================
+         19. KINGZEE RIDE
+    ====================================================== -->
+    <section id="kingzeeRidePage" class="page inner-page" hidden>
+      <header class="page-header">
+        <button type="button" class="icon-btn" data-back="dashboardPage">←</button>
+        <h1>KINGZEE RIDE</h1>
+      </header>
+
+      <main class="page-content">
+        <div class="ride-hero">
+          <span class="tile-icon">🚗</span>
+          <h2>Your journey starts here</h2>
+          <p>Connect passengers and drivers for convenient transportation.</p>
+        </div>
+
+        <div class="ride-tabs" role="tablist">
+          <button type="button" class="ride-tab active-tab"
+            data-ride-tab="passenger" aria-selected="true">Passenger</button>
+          <button type="button" class="ride-tab"
+            data-ride-tab="driver" aria-selected="false">Driver</button>
+          <button type="button" class="ride-tab"
+            data-ride-tab="history" aria-selected="false">My Trips</button>
+        </div>
+
+        <!-- PASSENGER -->
+        <section id="ridePassengerPanel" class="ride-panel">
+          <h2>Request a ride</h2>
+
+          <form id="rideRequestForm" class="content-form" novalidate>
+            <label for="ridePickup">Pickup location</label>
+            <input id="ridePickup" name="pickup" required
+              placeholder="Enter pickup address">
+
+            <label for="rideDestination">Destination</label>
+            <input id="rideDestination" name="destination" required
+              placeholder="Where are you going?">
+
+            <label for="ridePassengerCount">Passengers</label>
+            <select id="ridePassengerCount" name="passengers" required>
+              <option value="1">1 passenger</option>
+              <option value="2">2 passengers</option>
+              <option value="3">3 passengers</option>
+              <option value="4">4 passengers</option>
+              <option value="5">5 passengers</option>
+              <option value="6">6 passengers</option>
+            </select>
+
+            <label for="rideNotes">Additional instructions</label>
+            <textarea id="rideNotes" name="notes" rows="2"></textarea>
+
+            <button type="submit" class="btn btn-primary btn-full">
+              Find a driver
+            </button>
+          </form>
+
+          <div id="rideRequestStatus" class="form-message"
+            role="status" hidden></div>
+
+          <div id="availableDrivers" class="profile-grid"></div>
+        </section>
+
+        <!-- DRIVER REGISTRATION -->
+        <section id="rideDriverPanel" class="ride-panel" hidden>
+          <h2>Driver registration</h2>
+
+          <div class="registration-banner">
+            <p>Complete your driver profile before requesting activation.</p>
+            <p>Optional initial payment: <strong>GH₵200</strong></p>
+            <p>Eligible paid drivers receive two weeks of free system use
+              under the configured ride plan.</p>
+          </div>
+
+          <form id="rideDriverRegistrationForm" class="content-form" novalidate>
+            <input type="hidden" name="driverApplicationId" id="driverApplicationId">
+
+            <label for="driverFullName">Full name</label>
+            <input id="driverFullName" name="fullName" required>
+
+            <label for="driverEmail">Email</label>
+            <input id="driverEmail" name="email" type="email" required>
+
+            <label for="driverPhone">Phone number</label>
+            <input id="driverPhone" name="phone" type="tel" required>
+
+            <label for="driverLocation">Operating area</label>
+            <input id="driverLocation" name="location" required>
+
+            <label for="driverVehicleType">Vehicle type</label>
+            <select id="driverVehicleType" name="vehicleType" required>
+              <option value="">Choose a vehicle</option>
+              <option value="car">Car</option>
+              <option value="motorbike">Motorbike</option>
+              <option value="tricycle">Tricycle</option>
+            </select>
+
+            <label for="driverVehicleMake">Vehicle make and model</label>
+            <input id="driverVehicleMake" name="vehicleMake" required>
+
+            <label for="driverPlate">Vehicle registration number</label>
+            <input id="driverPlate" name="plate" required>
+
+            <label for="driverLicense">Driver's licence</label>
+            <input id="driverLicense" name="license" type="file"
+              accept="image/jpeg,image/png,application/pdf" required>
+
+            <label for="driverVehiclePhoto">Vehicle photo</label>
+            <input id="driverVehiclePhoto" name="vehiclePhoto" type="file"
+              accept="image/jpeg,image/png,image/webp" required>
+            <div id="driverVehiclePhotoPreview" class="upload-preview"></div>
+
+            <label for="driverIdProof">Identity verification document</label>
+            <input id="driverIdProof" name="identityProof" type="file"
+              accept="image/jpeg,image/png,application/pdf" required>
+
+            <button type="submit" class="btn btn-primary btn-full">
+              Submit driver registration
+            </button>
+          </form>
+
+          <section id="driverActivationPanel" class="driver-activation-panel" hidden>
+            <h2>Driver account status</h2>
+            <p id="driverAccountStatus">Awaiting verification.</p>
+
+            <div class="ride-account-stats">
+              <div><span>Trips today</span><strong id="driverTripsToday">0</strong></div>
+              <div><span>Free period</span><strong id="driverFreePeriod">—</strong></div>
+              <div><span>Outstanding fees</span><strong id="driverFeesDue">GH₵0.00</strong></div>
+            </div>
+
+            <button type="button" id="driverGoOnlineBtn"
+              class="btn btn-primary btn-full" disabled>Go online</button>
+            <button type="button" id="driverGoOfflineBtn"
+              class="btn btn-secondary btn-full" hidden>Take a break / Go offline</button>
+
+            <p id="driverOnlineStatus" role="status">You are offline.</p>
+          </section>
+
+          <section id="driverPaymentPanel" class="payment-panel" hidden>
+            <h2>Driver plan payment</h2>
+            <p>Optional initial payment: <strong>GH₵200</strong></p>
+            <p>GCB Bank: <strong>1011102447763</strong></p>
+            <p>MTN MoMo: <strong>055 911 4251</strong></p>
+
+            <form id="driverPaymentForm" novalidate>
+              <label for="driverPaymentMethod">Payment method</label>
+              <select id="driverPaymentMethod" name="paymentMethod" required>
+                <option value="">Choose payment method</option>
+                <option value="gcb">GCB Bank</option>
+                <option value="mtn-momo">MTN Mobile Money</option>
+              </select>
+
+              <label for="driverPaymentReference">Transaction reference</label>
+              <input id="driverPaymentReference" name="reference">
+
+              <label for="driverPaymentProof">Payment proof</label>
+              <input id="driverPaymentProof" name="proof" type="file"
+                accept="image/jpeg,image/png,application/pdf" required>
+
+              <button type="submit" class="btn btn-primary btn-full">
+                Submit payment proof
+              </button>
+            </form>
+          </section>
+        </section>
+
+        <!-- TRIP HISTORY -->
+        <section id="rideHistoryPanel" class="ride-panel" hidden>
+          <h2>Trip history</h2>
+          <div id="rideTripHistory" class="application-list">
+            <div class="empty-state">
+              <span>🧾</span>
+              <p>Your completed and active trips will appear here.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="ride-rules">
+          <h3>Driver plan information</h3>
+          <ul>
+            <li>Optional GH₵200 initial payment.</li>
+            <li>Two weeks of free use for eligible paid drivers.</li>
+            <li>After the free period, track up to 20 trips per day.</li>
+            <li>Apply the configured GH₵150 charge after the 20-trip threshold.</li>
+            <li>Going offline pauses availability; it does not erase trips already made.</li>
+            <li>Daily trip counters reset after the configured 24-hour period.</li>
+          </ul>
+        </section>
+      </main>
+    </section>
+
+
+    <!-- =====================================================
+         20. ECOSYSTEM SERVICE PLACEHOLDER
+    ====================================================== -->
+    <section id="ecosystemServicePage" class="page inner-page" hidden>
+      <header class="page-header">
+        <button type="button" class="icon-btn" data-back="dashboardPage">←</button>
+        <h1 id="ecosystemServiceTitle">KINGZEE ECOSYSTEM</h1>
+      </header>
+
+      <main class="page-content">
+        <div class="service-placeholder">
+          <span class="tile-icon">🌎</span>
+          <h2 id="ecosystemServiceHeading">Coming soon</h2>
+          <p id="ecosystemServiceDescription">
+            This service will be connected as its functionality is implemented.
+          </p>
+          <span class="status-badge status-pending">In development</span>
+        </div>
+      </main>
+    </section>
+
+
+    <!-- =====================================================
+         21. PROFILE & SETTLE
+    ====================================================== -->
+    <section id="profilePage" class="page inner-page" hidden>
+      <header class="page-header">
+        <button type="button" class="icon-btn" data-back="dashboardPage">←</button>
+        <h1>Profile &amp; Settle</h1>
+      </header>
+
+      <main class="page-content">
+        <section class="profile-summary">
+          <div id="profileAvatar" class="avatar-placeholder">K</div>
+          <h2 id="profileDisplayName">Your profile</h2>
+          <p id="profileEmailDisplay"></p>
+          <span id="profileMemberStatus" class="status-badge">Member</span>
+        </section>
+
+        <form id="profileForm" class="content-form" novalidate>
+          <label for="profileFullName">Full name</label>
+          <input id="profileFullName" name="fullName" required maxlength="120">
+
+          <label for="profilePhone">Phone number</label>
+          <input id="profilePhone" name="phone" type="tel">
+
+          <label for="profileLocation">Location</label>
+          <input id="profileLocation" name="location">
+
+          <label for="profileBio">About me</label>
+          <textarea id="profileBio" name="bio" rows="3" maxlength="1500"></textarea>
+
+          <label for="profilePhoto">Profile photo</label>
+          <input id="profilePhoto" name="photo" type="file"
+            accept="image/jpeg,image/png,image/webp">
+          <div id="profilePhotoPreview" class="upload-preview"></div>
+
+          <button type="submit" class="btn btn-primary btn-full">
+            Save profile
+          </button>
+        </form>
+
+        <section class="dashboard-section">
+          <h2>Account settlement</h2>
+          <div id="accountSettlementSummary" class="application-list">
+            <p>Payment records and outstanding balances will appear here.</p>
+          </div>
+        </section>
+
+        <button type="button" id="profileSignOutBtn"
+          class="btn btn-outline btn-full">Sign out</button>
+      </main>
+    </section>
+
+
+    <!-- =====================================================
+         22. MENU
+    ====================================================== -->
+    <section id="menuPage" class="page inner-page" hidden>
+      <header class="page-header">
+        <button type="button" class="icon-btn" data-back="dashboardPage">←</button>
+        <h1>Menu</h1>
+      </header>
+
+      <main class="page-content">
+        <nav class="menu-list" aria-label="Main menu">
+          <button type="button" class="menu-row" data-go="profilePage">
+            <span>👤</span><span>My profile</span><span>→</span>
+          </button>
+          <button type="button" class="menu-row" data-go="myApplicationsPage">
+            <span>📋</span><span>My applications</span><span>→</span>
+          </button>
+          <button type="button" class="menu-row" data-go="messagesPage">
+            <span>💬</span><span>Messages</span><span>→</span>
+          </button>
+          <button type="button" class="menu-row" data-go="statusPage">
+            <span>◉</span><span>Status</span><span>→</span>
+          </button>
+          <button type="button" class="menu-row" data-go="discoverPage">
+            <span>△</span><span>Discover posts</span><span>→</span>
+          </button>
+          <button type="button" class="menu-row" data-go="userFollowPage">
+            <span>👥</span><span>Connections</span><span>→</span>
+          </button>
+          <button type="button" class="menu-row" data-go="supportPage">
+            <span>🛟</span><span>Support</span><span>→</span>
+          </button>
+          <button type="button" class="menu-row" id="menuSignOutBtn">
+            <span>↪</span><span>Sign out</span><span>→</span>
+          </button>
+        </nav>
+      </main>
+    </section>
+
+
+    <!-- =====================================================
+         23. SUPPORT
+    ====================================================== -->
+    <section id="supportPage" class="page inner-page" hidden>
+      <header class="page-header">
+        <button type="button" class="icon-btn" data-back="dashboardPage">←</button>
+        <h1>Support</h1>
+      </header>
+
+      <main class="page-content">
+        <div class="support-hero">
+          <span class="tile-icon">🛟</span>
+          <h2>How can we help?</h2>
+          <p>Contact KINGZEE CONNECT or join our community channels.</p>
+        </div>
+
+        <div class="support-links">
+          <a href="https://whatsapp.com/channel/0029Vb8BhSoCcW4he39vMV2l"
+            target="_blank" rel="noopener noreferrer" class="support-link">
+            <span>🟢</span>
+            <span><strong>WhatsApp Channel</strong><small>Follow KINGZEE CONNECT</small></span>
+            <span>↗</span>
+          </a>
+
+          <a href="https://t.me/kingzeeconnect"
+            target="_blank" rel="noopener noreferrer" class="support-link">
+            <span>✈️</span>
+            <span><strong>Telegram</strong><small>Connect with our community</small></span>
+            <span>↗</span>
+          </a>
+        </div>
+
+        <form id="supportForm" class="content-form" novalidate>
+          <h2>Send a support request</h2>
+
+          <label for="supportSubject">Subject</label>
+          <input id="supportSubject" name="subject" maxlength="180" required>
+
+          <label for="supportCategory">Issue category</label>
+          <select id="supportCategory" name="category" required>
+            <option value="">Choose a category</option>
+            <option>Account access</option>
+            <option>Registration or application</option>
+            <option>Payment</option>
+            <option>Messaging or connections</option>
+            <option>Trade or store</option>
+            <option>Ride service</option>
+            <option>Other</option>
+          </select>
+
+          <label for="supportMessage">Describe your issue</label>
+          <textarea id="supportMessage" name="message"
+            rows="5" maxlength="5000" required></textarea>
+
+          <button type="submit" class="btn btn-primary btn-full">
+            Submit support request
+          </button>
+
+          <div id="supportFormMessage" class="form-message"
+            role="status" hidden></div>
+        </form>
+      </main>
+    </section>
+
+
+    <!-- =====================================================
+         24. OWNER DASHBOARD
+    ====================================================== -->
+    <section id="ownerDashboardPage" class="page owner-page" hidden>
+      <header class="app-header">
+        <a href="#ownerDashboardPage" class="brand brand-link">
+          <span class="brand-mark">K</span>
+          <span class="brand-name">KINGZEE <b>OWNER</b></span>
+        </a>
+
+        <button type="button" id="ownerSignOutBtn"
+          class="btn btn-outline">Sign out</button>
+      </header>
+
+      <main class="page-content">
+        <section class="dashboard-greeting">
+          <span class="section-eyebrow">ADMINISTRATION</span>
+          <h1>Owner control centre</h1>
+          <p>Review applications, verify payments and manage platform activity.</p>
+        </section>
+
+        <div class="owner-stat-grid">
+          <div class="owner-stat">
+            <span>Total applications</span>
+            <strong id="ownerTotalApplications">0</strong>
+          </div>
+          <div class="owner-stat">
+            <span>Pending review</span>
+            <strong id="ownerPendingApplications">0</strong>
+          </div>
+          <div class="owner-stat">
+            <span>Awaiting payment verification</span>
+            <strong id="ownerPendingPayments">0</strong>
+          </div>
+          <div class="owner-stat">
+            <span>Approved profiles</span>
+            <strong id="ownerApprovedProfiles">0</strong>
+          </div>
+        </div>
+
+        <div class="owner-tabs" role="tablist">
+          <button type="button" class="owner-tab active-tab"
+            data-owner-tab="pending" aria-selected="true">Pending</button>
+          <button type="button" class="owner-tab"
+            data-owner-tab="payments" aria-selected="false">Payments</button>
+          <button type="button" class="owner-tab"
+            data-owner-tab="approved" aria-selected="false">Approved</button>
+          <button type="button" class="owner-tab"
+            data-owner-tab="users" aria-selected="false">Users</button>
+          <button type="button" class="owner-tab"
+            data-owner-tab="content" aria-selected="false">Content</button>
+          <button type="button" class="owner-tab"
+            data-owner-tab="support" aria-selected="false">Support</button>
+        </div>
+
+        <!-- OWNER PENDING APPLICATIONS -->
+        <section id="ownerPendingPanel" class="owner-panel">
+          <h2>Pending applications</h2>
+
+          <form id="ownerApplicationFilters" class="search-form">
+            <label for="ownerApplicationType">Application type</label>
+            <select id="ownerApplicationType" name="type">
+              <option value="all">All types</option>
+              <option value="professional">Professional</option>
+              <option value="company">Company</option>
+              <option value="store">Store</option>
+              <option value="driver">Driver</option>
+              <option value="trade">Trade listing</option>
+            </select>
+
+            <label for="ownerApplicationSearch">Search applications</label>
+            <input id="ownerApplicationSearch" name="query"
+              placeholder="Name, email or application ID">
+
+            <button type="submit" class="btn btn-primary btn-full">Filter</button>
+          </form>
+
+          <div id="ownerPendingList" class="owner-application-list">
+            <div class="empty-state">
+              <span>📋</span>
+              <p>Pending applications will appear here.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- PAYMENT REVIEW -->
+        <section id="ownerPaymentsPanel" class="owner-panel" hidden>
+          <h2>Payment verification</h2>
+          <div id="ownerPaymentsList" class="owner-application-list">
+            <div class="empty-state">
+              <p>Payments awaiting verification will appear here.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- APPROVED -->
+        <section id="ownerApprovedPanel" class="owner-panel" hidden>
+          <h2>Approved profiles</h2>
+          <div id="ownerApprovedList" class="owner-application-list"></div>
+        </section>
+
+        <!-- USERS -->
+        <section id="ownerUsersPanel" class="owner-panel" hidden>
+          <h2>User management</h2>
+          <form id="ownerUsersSearchForm" class="search-form">
+            <label for="ownerUsersQuery">Search users</label>
+            <input id="ownerUsersQuery" name="query"
+              placeholder="Name, email or user ID">
+            <button type="submit" class="btn btn-primary btn-full">Search</button>
+          </form>
+          <div id="ownerUsersList" class="owner-application-list"></div>
+        </section>
+
+        <!-- CONTENT MODERATION -->
+        <section id="ownerContentPanel" class="owner-panel" hidden>
+          <h2>Status and discover moderation</h2>
+          <p>Review reported or flagged content and take authorized moderation actions.</p>
+          <div id="ownerContentList" class="owner-application-list"></div>
+        </section>
+
+        <!-- SUPPORT REQUESTS -->
+        <section id="ownerSupportPanel" class="owner-panel" hidden>
+          <h2>Support requests</h2>
+          <div id="ownerSupportList" class="owner-application-list"></div>
+        </section>
+      </main>
+    </section>
+
+
+    <!-- =====================================================
+         25. OWNER APPLICATION REVIEW
+    ====================================================== -->
+    <section id="ownerReviewPage" class="page inner-page owner-page" hidden>
+      <header class="page-header">
+        <button type="button" class="icon-btn" data-back="ownerDashboardPage">←</button>
+        <h1>Review application</h1>
+      </header>
+
+      <main class="page-content">
+        <article id="ownerReviewContent" class="owner-review-card">
+          <div class="empty-state">
+            <p>Select a pending application to inspect its details.</p>
+          </div>
+        </article>
+
+        <section id="ownerReviewActions" class="owner-review-actions" hidden>
+          <h2>Decision</h2>
+
+          <label for="ownerDecisionNote">Owner notes / reason</label>
+          <textarea id="ownerDecisionNote" rows="3" maxlength="2000"
+            placeholder="Add approval notes or explain required corrections"></textarea>
+
+          <button type="button" id="ownerApproveBtn"
+            class="btn btn-primary btn-full">Approve application</button>
+
+          <button type="button" id="ownerRequestChangesBtn"
+            class="btn btn-secondary btn-full">Request changes</button>
+
+          <button type="button" id="ownerRejectBtn"
+            class="btn btn-danger btn-full">Reject application</button>
+        </section>
+      </main>
+    </section>
+
+
+    <!-- =====================================================
+         26. TERMS AND CONDITIONS
+    ====================================================== -->
+    <section id="termsPage" class="page inner-page" hidden>
+      <header class="page-header">
+        <button type="button" class="icon-btn" data-back="createAccountPage">←</button>
+        <h1>Terms &amp; Conditions</h1>
+      </header>
+
+      <main class="page-content legal-content">
+        <h2>Using KINGZEE CONNECT</h2>
+        <p>
+          KINGZEE CONNECT is designed to connect users, service professionals,
+          companies, customers and businesses. Users must provide accurate
+          information and use the platform lawfully.
+        </p>
+
+        <h2>Accounts and security</h2>
+        <p>
+          Users are responsible for protecting their account credentials.
+          Impersonation, fraud, unauthorized access and misuse of the platform
+          are prohibited.
+        </p>
+
+        <h2>Registration and approvals</h2>
+        <p>
+          Registration submissions are subject to review. Payment submission
+          does not guarantee approval. Only applications approved through the
+          authorized review process may become publicly searchable.
+        </p>
+
+        <h2>Payments and services</h2>
+        <p>
+          Applicable fees, payment verification requirements, cancellation
+          rules and service conditions must be communicated before payment.
+          Ride charges and other transaction rules are subject to the
+          applicable service terms.
+        </p>
+
+        <h2>Content and communication</h2>
+        <p>
+          Users must have the right to upload the images, videos and other
+          material they share. Harassment, fraud, unlawful content and
+          unauthorized use of personal information are prohibited.
+        </p>
+
+        <h2>Privacy</h2>
+        <p>
+          Personal information should be processed only for disclosed platform
+          purposes, with appropriate security and access controls.
+        </p>
+
+        <h2>Important notice</h2>
+        <p>
+          These are initial terms placeholders. The final terms, privacy
+          policy, payment policies, refund rules and service-specific
+          conditions must be reviewed and approved before the platform launches.
+        </p>
+
+        <button type="button" class="btn btn-primary btn-full"
+          data-back="createAccountPage">Back to registration</button>
+      </main>
+    </section>
+
+
+    <!-- =====================================================
+         27. FORGOT PASSWORD
+    ====================================================== -->
+    <section id="forgotPasswordPage" class="page auth-page" hidden>
+      <header class="page-header">
+        <button type="button" class="icon-btn" data-back="signInPage">←</button>
+        <h1>Reset password</h1>
+      </header>
+
+      <main class="auth-container">
+        <p>Enter your account email to request a password reset link.</p>
+
+        <form id="forgotPasswordForm" novalidate>
+          <label for="resetEmail">Email address</label>
+          <input id="resetEmail" name="email" type="email"
+            autocomplete="email" required>
+
+          <button type="submit" class="btn btn-primary btn-full">
+            Send reset link
+          </button>
+
+          <div id="resetPasswordMessage" class="form-message"
+            role="status" hidden></div>
+        </form>
+      </main>
+    </section>
+
+
+    <!-- =====================================================
+         28. GLOBAL FEEDBACK AND CONFIRMATION DIALOGS
+    ====================================================== -->
+    <div id="globalToast" class="global-toast" role="status"
+      aria-live="polite" hidden></div>
+
+    <dialog id="confirmDialog" class="app-dialog">
+      <div class="dialog-content">
+        <h2 id="confirmDialogTitle">Confirm action</h2>
+        <p id="confirmDialogMessage">Are you sure you want to continue?</p>
+        <div class="dialog-actions">
+          <button type="button" id="confirmDialogCancel"
+            class="btn btn-secondary">Cancel</button>
+          <button type="button" id="confirmDialogAccept"
+            class="btn btn-primary">Confirm</button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog id="mediaDialog" class="app-dialog media-dialog">
+      <div class="dialog-content">
+        <button type="button" id="closeMediaDialog"
+          class="icon-btn" aria-label="Close media">×</button>
+        <div id="mediaDialogContent"></div>
+      </div>
+    </dialog>
+
+  </div>
+
+  <!-- =====================================================
+       APP CONFIGURATION
+       The next phase supplies the matching JavaScript.
+       Never put a Supabase service-role key or owner secret here.
+  ====================================================== -->
+
+  <!-- Supabase browser library. The publishable key will be configured
+       in the JavaScript supplied in Phase 3. -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- The matching application script will be supplied in Phase 3. -->
+  <script src="script.js"></script>
+</body>
+</html>
